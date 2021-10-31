@@ -6,6 +6,30 @@ body {
     overflow-x: hidden;
 }
 
+.header {
+    position: relative;
+    display: grid;
+    font-size: 45;
+    background:#FF6969;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 25px 20vw;
+}
+
+.header-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.grid-left {
+    justify-self: left;
+}
+
+.grid-right {
+    justify-self: right;
+}
+
 section {
     position: relative;
     display: flex;
@@ -29,6 +53,38 @@ section {
 
 .dark {
     background: #0f0f10;
+}
+
+.header-waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.header-waves svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+}
+
+.header-waves .shape-fill {
+    fill: #FF6969;
+}
+
+.header-svg {
+    aspect-ratio: 960/100;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.background-svg {
+    background-image: url('../svg/header-waves.svg');
 }
 
 .curve-blue-body {
@@ -161,6 +217,3 @@ section {
     background-size: cover;
 }
 
-.body-blob {
-    background-image: url('../svg/body-blob.svg')
-}

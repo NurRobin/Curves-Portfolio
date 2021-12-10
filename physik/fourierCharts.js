@@ -26,7 +26,7 @@ data: {
     pointBackgroundColor: 'orange',
     pointBorderColor: 'darkorange',
     borderColor: "orange",
-    pointRadius: 10,
+    pointRadius: 5,
     borderWidth: 1,
     tension: 0,
     showLine: true,
@@ -84,6 +84,30 @@ const config2 = {
 
 
 
+const config3 = {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        data: [],
+        label: "Schwerpunkt",
+        pointBackgroundColor: 'orange',
+        pointBorderColor: 'darkorange',
+        borderColor: "orange",
+        pointRadius: 5,
+        borderWidth: 1,
+        tension: 0,
+        showLine: true,
+      },{
+        data: [],
+        borderColor: "black",
+        borderWidth: 1,
+        tension: 0,
+        showLine: true,
+        pointRadius: 0
+    }]
+    },
+    options: options
+};
 
 
 const myChart = new Chart(
@@ -111,10 +135,11 @@ myChart4.update()
 
 const myChart5 = new Chart(
     document.getElementById('finalChart'),
-    config2
+    config3
 );
 
-myChart5.data.datasets[0].label = "Finale Transformation"
+myChart5.data.datasets[0].label = 'Current k'
+myChart5.data.datasets[1].label = "Finale Transformation"
 myChart5.update()
 
 function sleep(ms) {
@@ -211,7 +236,12 @@ waveslider2.addEventListener('input', function () {
         },1000)
     }
 });
-waveslider3.addEventListener('input', updateValue);
+waveslider3.addEventListener('input', function () {
+    updateValue()
+    myChart5.data.datasets[0].data = [{x: (parseFloat(waveslider3.value)/1000), y: 0},{x: (parseFloat(waveslider3.value)/1000), y: myChart5.scales.y.max}]
+    myChart5.update()
+
+});
 
 function updateValue() {
     // if (waveslider1.value > waveslider2.value) {
@@ -236,6 +266,8 @@ async function playAnim() {
     waveslider3.value = 0
     while(parseFloat(waveslider3.value) < parseFloat(waveslider3.max) && play == true){
         updateValue()
+        myChart5.data.datasets[0].data = [{x: (parseFloat(waveslider3.value)/1000), y: 0},{x: (parseFloat(waveslider3.value)/1000), y: myChart5.scales.y.max}]
+        myChart5.update()
         waveslider3.value =  parseInt(waveslider3.value) + 1
         console.log(waveslider3.value+" of "+waveslider3.max+" "+(parseInt(waveslider3.value) + 1))
         await sleep(20)
@@ -287,6 +319,6 @@ function createFinalTransformation(){
         i = i + di
     }
 
-    myChart5.data.datasets[0].data = data;
+    myChart5.data.datasets[1].data = data;
     myChart5.update()
 }

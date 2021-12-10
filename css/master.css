@@ -514,3 +514,8 @@ section {
 .round-button {
     border-radius: 100%;
 }
+
+.chart {
+    margin: 20px;
+    background-color: white;
+}

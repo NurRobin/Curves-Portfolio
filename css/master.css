@@ -524,8 +524,8 @@ section {
 }
 
 .fourier-chart {
-    width: 25vw;
-    height: 25vw;
+    aspect-ratio: 720/720;
+    width: 50vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
     background-color: white;

@@ -1,8 +1,10 @@
 
 const options = {
+    responsive: true,
+    maintainAspectRatio: false,
     bezierCurve: true,
     animation: {
-        duration: 1000
+        duration: 0
     },
     elements: {
     line: {
@@ -173,4 +175,21 @@ function addData(wave1,wave2,k){
   myChart.update()
 
 
+}
+
+let waveslider1 = document.getElementById("waveslider1")
+let waveslider2 = document.getElementById("waveslider2")
+let waveslider3 = document.getElementById("waveslider3")
+
+waveslider1.addEventListener('input', updateValue);
+waveslider2.addEventListener('input', updateValue);
+waveslider3.addEventListener('input', updateValue);
+
+function updateValue() {
+    if (waveslider1.value > waveslider2.value) {
+        waveslider3.max = waveslider1.value
+    } else {
+        waveslider3.max = waveslider2.value
+    }
+  addData(waveslider1.value / 1000,waveslider2.value/ 1000,waveslider3.value/ 1000)
 }

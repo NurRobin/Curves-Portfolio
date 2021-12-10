@@ -416,7 +416,7 @@ section {
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: auto 90px auto auto 90px; 
-    gap: 5px 5px; 
+    gap: 0px 0px; 
     grid-template-areas: 
     "sinus-chart sinus-chart"
     "sinus-slider1 sinus-slider2"

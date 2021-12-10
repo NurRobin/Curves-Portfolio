@@ -516,15 +516,17 @@ section {
 }
 
 .chart {
-    width: 75vw;
-    height: 25vh;
-    margin: 20px;
+    width: 50vw;
+    height: 20vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     background-color: white;
 }
 
 .fourier-chart {
     width: 25vw;
     height: 25vw;
-    margin: 20px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     background-color: white;
 }

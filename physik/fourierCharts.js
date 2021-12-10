@@ -228,6 +228,9 @@ function updateValue() {
 }
 
 updateValue()
+createFinalTransformation()
+
+
 play = false
 async function playAnim() {
     waveslider3.value = 0

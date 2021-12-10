@@ -3,130 +3,31 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
     </head>
     <body>
-        <div class="divChart">
-            <canvas class="myCharts" id="myChart"></canvas>
-          </div>
           <div class="divChart">
-            <canvas class="myCharts wave" id="myChart2"></canvas>
+            <canvas class="myCharts" id="endChart"></canvas>
           </div>
           <div class="divChart ">
-            <canvas class="myCharts wave" id="myChart3"></canvas>
+            <canvas class="myCharts wave" id="sinChart"></canvas>
           </div>
           <div class="divChart ">
-            <canvas class="myCharts wave" id="myChart4"></canvas>
+            <canvas class="myCharts wave" id="combinedChart"></canvas>
           </div>
           <style>
               .myCharts {
-                  width: 500px;
-                  height: 500px;
-                  min-width: 500px;
-                  min-height: 500px;
-                  max-width: 500px;
-                  max-height: 500px;
-              }
+    width: 500px;
+    height: 500px;
+    min-width: 500px;
+    min-height: 500px;
+    max-width: 500px;
+    max-height: 500px;
+}
 
-              .wave {
-                height: 200px;
-                min-height: 200px;
-                max-height: 200px;
-              }
-          </style>
-          <script>
-
-
-            const config = {
-            type: 'scatter',
-            data: {
-                datasets: [{
-                    data: [],
-                    borderColor: 'black',
-                    borderWidth: 1,
-                    pointBackgroundColor: ['#000', '#00bcd6', '#d300d6'],
-                    pointBorderColor: ['#000', '#00bcd6', '#d300d6'],
-                    fill: false,
-                    tension: 0,
-                    showLine: true,
-                }]
-            },
-            options: {
-                animation: {
-                    duration: 0
-                },
-                elements: {
-                point:{
-                    radius: 0
-                },
-                line: {
-                    borderWidth: 3
-                }
-                }
-            }
-            };
-
-            const myChart = new Chart(
-              document.getElementById('myChart'),
-              JSON.parse(JSON.stringify(config))
-            );
-
-
-            const myChart2 = new Chart(
-              document.getElementById('myChart2'),
-              JSON.parse(JSON.stringify(config))
-            );
-
-            const myChart3 = new Chart(
-              document.getElementById('myChart3'),
-              JSON.parse(JSON.stringify(config))
-            );
-            const myChart4 = new Chart(
-              document.getElementById('myChart4'),
-              JSON.parse(JSON.stringify(config))
-            );
-
-            function sleep(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
-
-            
-
-            function addData(){
-                let wave1 = 1;
-                let wave2 = 0.5;
-
-                let dataWave1 = [];
-                let dataWave2 = [];
-                let dataWave3 = [];
-
-                let t = 0;
-                let till = 50;
-                let dt = 0.1;
-                let data = [];
-                while(t < till){
-                    
-                    dataWave1.push({ x: t, y: Math.sin(2*Math.PI*wave1*t)});
-                    dataWave2.push({ x: t, y: Math.sin(2*Math.PI*wave2*t)});
-                    dataWave3.push({ x: t, y: ( Math.sin(2*Math.PI*wave2*t) + Math.sin(2*Math.PI*wave1*t))});
-
-
-
-                    t += dt;
-
-                }
-                
-
-                myChart2.data.datasets[0].data = dataWave1;
-                myChart3.data.datasets[0].data = dataWave2;
-                myChart4.data.datasets[0].data = dataWave3;
-                myChart2.update()
-                myChart3.update()
-                myChart4.update()
-                
-                console.log(dataWave1)
-                console.log(dataWave2)
-                console.log(dataWave3)
-
-            }
-            
-          </script>
+.wave {
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+}
+    </style>
+    <script src="./fourierCharts.js"></script>        
     </body>
 </html>

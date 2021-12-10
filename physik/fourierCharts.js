@@ -91,13 +91,16 @@ document.getElementById('endChart'),
 config
 );
 
-myChart.data.datasets[0].label = '"Fourier Graph"'
+myChart.data.datasets[1].label = '"Fourier Graph"'
+myChart.data.datasets[0].label = 'Schwerpunkt'
+
 myChart.update()
 
 const myChart3 = new Chart(
 document.getElementById('sinChart'),
 config1
 );
+
 const myChart4 = new Chart(
 document.getElementById('combinedChart'),
 config2
@@ -105,6 +108,14 @@ config2
 
 myChart4.data.datasets[0].label = "Interferrenz"
 myChart4.update()
+
+const myChart5 = new Chart(
+    document.getElementById('finalChart'),
+    config2
+);
+
+myChart5.data.datasets[0].label = "Finale Transformation"
+myChart5.update()
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -121,7 +132,7 @@ function addData(wave1,wave2,k){
 
   let t = 0;
   let till = 50;
-  let dt = 0.1;
+  let dt = 0.08;
   let data = [];
   
   let xSum = 0;
@@ -157,23 +168,19 @@ function addData(wave1,wave2,k){
       }
 
   }
-
-  console.log("Off from center:"+ Math.round((Math.abs((xSum / ((1/dt)*till)))+Math.abs((ySum / ((1/dt)*till)))) * 1000))
-  
-  myChart3.data.datasets[0].data = dataWave1;
-  myChart3.data.datasets[1].data = dataWave2;
-  myChart4.data.datasets[0].data = dataWave3;
-  myChart3.update()
-  myChart4.update()
-  
-  myChart.data.datasets[0].data = [{x: (xSum / ((1/dt)*till)), y: (ySum / ((1/dt)*till))}]
-  myChart.data.datasets[1].data = data;
-  myChart.config.options.scales.x.min = -1*Max
-  myChart.config.options.scales.x.max = Max
-  myChart.config.options.scales.y.max = Max
-  myChart.config.options.scales.y.min = -1*Max
-  myChart.update()
-
+    myChart3.data.datasets[0].data = dataWave1;
+    myChart3.data.datasets[1].data = dataWave2;
+    myChart4.data.datasets[0].data = dataWave3;
+    myChart3.update()
+    myChart4.update()
+    
+    myChart.data.datasets[0].data = [{x: (xSum / ((1/dt)*till)), y: (ySum / ((1/dt)*till))}]
+    myChart.data.datasets[1].data = data;
+    myChart.config.options.scales.x.min = -1*Max
+    myChart.config.options.scales.x.max = Max
+    myChart.config.options.scales.y.max = Max
+    myChart.config.options.scales.y.min = -1*Max
+    myChart.update()
 
 }
 
@@ -181,8 +188,29 @@ let waveslider1 = document.getElementById("waveslider1")
 let waveslider2 = document.getElementById("waveslider2")
 let waveslider3 = document.getElementById("waveslider3")
 
-waveslider1.addEventListener('input', updateValue);
-waveslider2.addEventListener('input', updateValue);
+renderingStartet = false
+waveslider1.addEventListener('input', function () {
+    updateValue()
+    latest = waveslider1.value
+    if(renderingStartet == false){
+        renderingStartet = true
+        setTimeout(function (){
+                createFinalTransformation()
+                renderingStartet = false   
+        },1000)
+    }
+});
+waveslider2.addEventListener('input', function () {
+    updateValue()
+    latest = waveslider1.value
+    if(renderingStartet == false){
+        renderingStartet = true
+        setTimeout(function (){
+                createFinalTransformation()
+                renderingStartet = false   
+        },1000)
+    }
+});
 waveslider3.addEventListener('input', updateValue);
 
 function updateValue() {
@@ -205,8 +233,8 @@ async function playAnim() {
     waveslider3.value = 0
     while(parseFloat(waveslider3.value) < parseFloat(waveslider3.max) && play == true){
         updateValue()
-        waveslider3.value =  parseFloat(waveslider3.value) + 1
-        console.log(waveslider3.value+" of "+waveslider3.max)
+        waveslider3.value =  parseInt(waveslider3.value) + 1
+        console.log(waveslider3.value+" of "+waveslider3.max+" "+(parseInt(waveslider3.value) + 1))
         await sleep(20)
     }
 }
@@ -221,3 +249,41 @@ document.getElementById("fourier-button").addEventListener("click",function () {
     play = true
     playAnim()
 });
+
+function createFinalTransformation(){
+    di = 0.01
+    i = 0.0
+
+    let t = 0.0;
+    let till = 50;
+    let dt = 0.1;
+    let data = [];
+    
+    let xSum = 0;
+    let ySum = 0;
+
+    data = []
+    while(i < 0.5){
+        while(t < till){
+            let fy = Math.sin(2*Math.PI*(waveslider1.value/1000)*t)
+            let hy = Math.sin(2*Math.PI*(waveslider2.value/1000)*t)
+            let gy = fy+hy
+      
+            wt = -2.0*Math.PI*i*t;
+            fourierX = gy*Math.cos(wt);
+            fourierY = gy*Math.sin(wt);
+      
+            xSum += fourierX
+            ySum += fourierY
+      
+            t += dt;
+      
+        }
+        t = 0
+        data.push({x:i,y: (Math.abs((xSum / ((1/dt)*till)))+Math.abs((ySum / ((1/dt)*till)))) * 1000})
+        i = i + di
+    }
+
+    myChart5.data.datasets[0].data = data;
+    myChart5.update()
+}

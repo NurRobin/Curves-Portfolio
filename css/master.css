@@ -412,50 +412,58 @@ section {
 }
 
 .sinus-grid {
-    display: grid; 
-    grid-auto-columns: 1fr; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto 90px auto auto 90px; 
-    gap: 0px 0px; 
-    grid-template-areas: 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 90px auto auto 90px auto;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
     "sinus-chart sinus-chart"
     "sinus-slider1 sinus-slider2"
     "d-sinus-chart d-sinus-chart"
     "end-chart end-chart"
-    "end-slider end-button"; 
+    "end-slider end-button"
+    "final-chart final-chart";
 }
 
 .sinus-chart {
+
     justify-self: center;
     align-self: center;
     grid-area: sinus-chart;
 }
 
 .sinus-slider1 {
+
     justify-self: center;
     align-self: center;
     grid-area: sinus-slider1;
 }
 
 .sinus-slider2 {
+
     justify-self: center;
     align-self: center;
     grid-area: sinus-slider2;
 }
 
 .d-sinus-chart {
+
     justify-self: center;
     align-self: center;
     grid-area: d-sinus-chart;
 }
 
 .end-chart {
+
     justify-self: center;
     align-self: center;
     grid-area: end-chart;
 }
 
 .end-slider {
+
     justify-self: center;
     align-self: center;
     grid-area: end-slider;
@@ -466,6 +474,13 @@ section {
     justify-self: center;
     align-self: center;
     grid-area: end-button;
+}
+
+.final-chart {
+
+    justify-self: center;
+    align-self: center;
+    grid-area: final-chart;
 }
 
 .slider {

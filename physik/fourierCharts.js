@@ -186,10 +186,38 @@ waveslider2.addEventListener('input', updateValue);
 waveslider3.addEventListener('input', updateValue);
 
 function updateValue() {
-    if (waveslider1.value > waveslider2.value) {
-        waveslider3.max = waveslider1.value
-    } else {
-        waveslider3.max = waveslider2.value
-    }
+    // if (waveslider1.value > waveslider2.value) {
+    //     waveslider3.max = waveslider1.value
+    // } else {
+    //     waveslider3.max = waveslider2.value
+    // }
+
+    document.getElementById("waveslider1Text").innerHTML = "Welle 1 ("+ waveslider1.value / 1000 +")"
+    document.getElementById("waveslider2Text").innerHTML = "Welle 2 ("+ waveslider2.value / 1000 +")"
+    document.getElementById("waveslider3Text").innerHTML = '"Test Frequenz" k ('+ waveslider3.value / 1000 +")"
+
   addData(waveslider1.value / 1000,waveslider2.value/ 1000,waveslider3.value/ 1000)
 }
+
+updateValue()
+play = false
+async function playAnim() {
+    waveslider3.value = 0
+    while(parseFloat(waveslider3.value) < parseFloat(waveslider3.max) && play == true){
+        updateValue()
+        waveslider3.value =  parseFloat(waveslider3.value) + 1
+        console.log(waveslider3.value+" of "+waveslider3.max)
+        await sleep(20)
+    }
+}
+
+
+
+document.getElementById("fourier-button").addEventListener("click",function () {
+    if(play == true){
+        play = false
+        return
+    }
+    play = true
+    playAnim()
+});

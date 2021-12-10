@@ -416,7 +416,7 @@ section {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 90px auto auto 90px auto;
     grid-auto-columns: 1fr;
-    gap: 0px 0px;
+    gap: 0px 5px;
     grid-auto-flow: row;
     grid-template-areas:
     "sinus-chart sinus-chart"
@@ -483,9 +483,13 @@ section {
     grid-area: final-chart;
 }
 
+.slidercontainer {
+    width: 100%;
+}
+
 .slider {
     -webkit-appearance: none;
-    width: 90%;
+    width: 100%;
     height: 10px;
     border-radius: 5px;  
     background: #d3d3d3;

@@ -413,7 +413,7 @@ section {
 
 .sinus-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     grid-template-rows: auto 90px auto auto 90px auto;
     grid-auto-columns: 1fr;
     gap: 0px 5px;

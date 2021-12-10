@@ -498,3 +498,19 @@ section {
     background: #0467a9;
     cursor: pointer;
 }
+
+.button {
+    background-color: #0467a9;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.round-button {
+    border-radius: 100%;
+}

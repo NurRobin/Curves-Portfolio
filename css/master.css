@@ -516,16 +516,16 @@ section {
 }
 
 .chart {
-    width: 50vw;
-    height: 20vh;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    width: 75vw !important;
+    height: auto !important;
+    margin: 1vh;
     background-color: white;
 }
 
 .fourier-chart {
-    aspect-ratio: 50vw/50vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    aspect-ratio: 1/1 !important;
+    width: 75vw !important;
+    height: auto !important;
+    margin: 1vh;
     background-color: white;
 }

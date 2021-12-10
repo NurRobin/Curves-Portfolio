@@ -515,7 +515,7 @@ section {
 }
 
 .chart {
-    width: 75vw !important;
+    width: 50vw !important;
     height: auto !important;
     margin: 1vh;
     background-color: white;
@@ -523,7 +523,7 @@ section {
 
 .fourier-chart {
     aspect-ratio: 1/1 !important;
-    width: 75vw !important;
+    width: 50vw !important;
     height: auto !important;
     margin: 1vh;
     background-color: white;

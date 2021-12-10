@@ -19,6 +19,14 @@ body {
     padding: 25px 20vw;
 }
 
+.header-wo-grid {
+    font-family: 'Secular One', sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 45;
+    background:var(--robin);
+}
+
 .header-title {
     font-size: xx-large;
     font-weight: bold;
@@ -326,6 +334,18 @@ section {
 }
 .mdn-svg {
     max-height: 150px;
+}
+
+.blue-to-red-svg {
+    aspect-ratio: 960/150;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.background-blue-to-red-svg {
+    background-image: url('../svg/blue-to-red.svg');
 }
 
 .trans-blue {

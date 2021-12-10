@@ -38,7 +38,7 @@ data: {
       pointRadius: 0
   },]
 },
-options: options
+options: JSON.parse(JSON.stringify(options))
 };
 
 const config1 = {
@@ -125,6 +125,7 @@ function addData(wave1,wave2,k){
   let xSum = 0;
   let ySum = 0;
 
+  let Max = 0
   while(t < till){
       let fy = Math.sin(2*Math.PI*wave1*t)
       let hy = Math.sin(2*Math.PI*wave2*t)
@@ -145,6 +146,14 @@ function addData(wave1,wave2,k){
 
       t += dt;
 
+      if (Math.abs(fourierX) > Max){
+          Max = Math.abs(fourierX)
+      }
+
+      if (Math.abs(fourierY) > Max){
+        Max = Math.abs(fourierY)
+      }
+
   }
 
   console.log("Off from center:"+ Math.round((Math.abs((xSum / ((1/dt)*till)))+Math.abs((ySum / ((1/dt)*till)))) * 1000))
@@ -157,6 +166,10 @@ function addData(wave1,wave2,k){
   
   myChart.data.datasets[0].data = [{x: (xSum / ((1/dt)*till)), y: (ySum / ((1/dt)*till))}]
   myChart.data.datasets[1].data = data;
+  myChart.config.options.scales.x.min = -1*Max
+  myChart.config.options.scales.x.max = Max
+  myChart.config.options.scales.y.max = Max
+  myChart.config.options.scales.y.min = -1*Max
   myChart.update()
 
 

@@ -348,6 +348,18 @@ section {
     background-image: url('../svg/blue-to-red.svg');
 }
 
+.blue-to-white-svg {
+    aspect-ratio: 960/150;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.background-blue-to-white-svg {
+    background-image: url('../svg/blue-to-white.svg');
+}
+
 .trans-blue {
     background-color: var(--blue);
 }
@@ -409,6 +421,10 @@ section {
     height: 100%;
     grid-area: 1 / 1 / 4 / 4;
     z-index: -1;
+}
+
+.white {
+    background: white;
 }
 
 .sinus-grid {

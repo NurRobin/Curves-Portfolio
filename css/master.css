@@ -566,3 +566,50 @@ section {
     margin: 1vh;
     background-color: white;
 }
+
+.social-link-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "Twitch-Log YouTube-Log Steam-Log"
+    "Instagram-Log Spotify-Log Twitter-Log";
+}
+
+.YouTube-Log {
+    justify-self: center;
+    align-self: center;
+    grid-area: YouTube-Log;
+}
+
+.Twitch-Log {
+    justify-self: center;
+    align-self: center;
+    grid-area: Twitch-Log;
+}
+
+.Steam-Log {
+    justify-self: center;
+    align-self: center;
+    grid-area: Steam-Log;
+}
+
+.Instagram-Log {
+    justify-self: center;
+    align-self: center;
+    grid-area: Instagram-Log;
+}
+
+.Spotify-Log {
+    justify-self: center;
+    align-self: center;
+    grid-area: Spotify-Log;
+}
+
+.Twitter-Log {
+    justify-self: center;
+    align-self: center;
+    grid-area: Twitter-Log;
+}

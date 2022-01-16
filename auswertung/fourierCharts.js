@@ -326,7 +326,7 @@ function createFinalTransformation(){
 
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = process;
-xhr.open("GET", "https://nurrobin.de/auswertung/Messung.csv", true);
+xhr.open("GET", "Messung.csv", true);
 xhr.send();
 var csv = "";
 function process()
@@ -335,7 +335,7 @@ function process()
     csv = xhr.responseText;
 
     // resp now has the text and you can process it.
-    console.log(resp);
+    console.log(csv);
   }
 }
 console.log($.csv.toObjects(csv))

@@ -322,3 +322,20 @@ function createFinalTransformation(){
     myChart5.data.datasets[1].data = data;
     myChart5.update()
 }
+
+
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = process;
+xhr.open("GET", "https://nurrobin.de/auswertung/Messung.csv", true);
+xhr.send();
+var csv = "";
+function process()
+{
+  if (xhr.readyState == 4) {
+    csv = xhr.responseText;
+
+    // resp now has the text and you can process it.
+    console.log(resp);
+  }
+}
+console.log($.csv.toObjects(csv))

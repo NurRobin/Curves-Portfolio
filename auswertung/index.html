@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourier Transformation</title>
+    <link rel="icon" type="image/png" href="../ico/android-chrome-512x512.png">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/colors.css">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-37DH87DXY8"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-37DH87DXY8');
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5776800556940540" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {"invalidateConsentWithoutLog":true,"consentOnContinuedBrowsing":false,"perPurposeConsent":true,"enableTcf":true,"googleAdditionalConsentMode":true,"whitelabel":false,"lang":"de","floatingPreferencesButtonDisplay":"bottom-right","siteId":2433055,"cookiePolicyId":80471719, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"acceptButtonColor":"#0f0f10","acceptButtonCaptionColor":"white","customizeButtonColor":"#202731","customizeButtonCaptionColor":"white","rejectButtonDisplay":true,"rejectButtonColor":"#dd3f31","rejectButtonCaptionColor":"white","listPurposes":true,"explicitWithdrawal":true,"position":"float-bottom-center","textColor":"white","backgroundColor":"#ff6969" }};
+    </script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/beta/stub-v2.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/beta/iubenda_cs.js" charset="UTF-8" async></script>
+</head>
+
+<body>
+    <div class="header-wo-grid">
+        <a href="http://nurrobin.de/" class="header-title anti-purple anti-underline">Fourier-Transformation</a>
+    </div>
+    <div class="header-svg background-header-svg"></div>
+    <section class="blue">
+        <h1>Eine Präsentation von Jonas, Jakob, Helge, Lasse und Robin</h1>
+        <!--<iframe src="https://www.youtube.com/embed/hChSar3TDSc?autoplay=1&loop=1&modestbranding=1&controls=0" style="aspect-ratio: 1/1; width: 50%;" frameborder="0"></iframe>-->
+        <video width="300px" height="300px" title="Fourier-Animation" autoplay loop muted>
+            <source src="../img/Fourier.mp4" type="video/mp4">
+        </video>
+    </section>
+    <div class="blue-to-white-svg background-blue-to-white-svg"></div>
+    <section class="white">
+        <div class="sinus-grid">
+            <div class="sinus-chart">
+                <canvas class="chart" id="sinChart"></canvas>
+            </div>
+            <div class="sinus-slider1 slidercontainer">
+                <p id="waveslider1Text">Welle 1 ()</p>
+                <input type="range" min="50" max="500" value="100" step="10" class="slider" id="waveslider1">
+            </div>
+            <div class="sinus-slider2 slidercontainer">
+                <p id="waveslider2Text">Welle 2 ()</p>
+                <input type="range" min="50" max="500" value="200" step="10" class="slider" id="waveslider2">
+            </div>
+            <div class="d-sinus-chart">
+            <canvas class="chart" id="combinedChart"></canvas>
+            </div>
+            <div class="end-chart">
+                <canvas class="fourier-chart" id="endChart"></canvas>
+            </div>
+            <div class="end-slider slidercontainer">
+                <p id = "waveslider3Text">Fourier-Graph</p> 
+                <input type="range" min="0" max="500" value="500" step="1" class="slider" id="waveslider3">
+            </div>
+            <div class="end-button">
+                <button class="button round-button" id="fourier-button">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+            </div>
+            <div class="final-chart">
+                <canvas class="chart" id="finalChart"></canvas>
+            </div>
+            <script src="./fourierCharts.js"></script>
+        </div>
+    </section>
+</body>

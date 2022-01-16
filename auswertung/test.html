@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+    </head>
+    <body>
+          <div class="divChart">
+            <canvas class="myCharts" id="endChart"></canvas>
+          </div>
+          <div class="divChart ">
+            <canvas class="myCharts wave" id="sinChart"></canvas>
+          </div>
+          <div class="divChart ">
+            <canvas class="myCharts wave" id="combinedChart"></canvas>
+          </div>
+          <style>
+              .myCharts {
+    width: 500px;
+    height: 500px;
+    min-width: 500px;
+    min-height: 500px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.wave {
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+}
+    </style>
+    <script src="./fourierCharts.js"></script>        
+    </body>
+</html>

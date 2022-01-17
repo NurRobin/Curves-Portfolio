@@ -124,12 +124,12 @@ function addData(csvData){
   let dataWave3 = [];
 
   let numData = 500
-  highestTime = parseFloat(csvData[numData-1]["Time"])
+  highestTime = parseFloat(csvData[numData-1]["Time"].replace(",","."))
 
   let i = 0
   while(i < numData){
       
-      dataWave3.push({ x: (highestTime/numData)*i, y: parseFloat(csvData[i]["Recording"])});
+      dataWave3.push({ x: (highestTime/numData)*i, y: parseFloat(csvData[i]["Recording"].replace(",","."))});
 
       i += 1;
 

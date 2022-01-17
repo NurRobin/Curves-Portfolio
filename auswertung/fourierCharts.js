@@ -130,13 +130,17 @@ function addData(csvData){
   while(i < numData){
       
       dataWave3.push({ x: (highestTime/numData)*i, y: parseFloat(csvData[i]["Recording"])});
-      
+
       i += 1;
 
   }
 
     myChart4.data.datasets[0].data = dataWave3;
     myChart4.update()
+
+    myChart4.config.options.scales.x.min = 0
+    myChart4.config.options.scales.x.max = highestTime
+
 
 
 }

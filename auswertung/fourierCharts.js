@@ -225,10 +225,11 @@ document.getElementById("fourier-button").addEventListener("click",function () {
   playAnim()
 });
 
+let till = 1000
 function createFinalTransformation(){
   let j = 0;
   let data2 = []
-  while(j < 1000){
+  while(j < till){
     let Savedata = [];
 
     let i = 0
@@ -267,6 +268,8 @@ function createFinalTransformation(){
   }
 
   myChart5.data.datasets[1].data = data2;
+  myChart5.config.options.scales.x.min = 0
+  myChart5.config.options.scales.x.max = till
   myChart5.update()
 }
 

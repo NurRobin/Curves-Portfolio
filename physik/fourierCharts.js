@@ -315,7 +315,7 @@ function createFinalTransformation(){
       
         }
         t = 0
-        data.push({x:i,y: (Math.abs((xSum / ((1/dt)*till)))+Math.abs((ySum / ((1/dt)*till)))) * 1000})
+        data.push({x:i,y: Math.sqrt(Math.pow(Math.abs((xSum / ((1/dt)*till))),2)+Math.pow(Math.abs((ySum / ((1/dt)*till))),2)) * 1000})
         i = i + di
     }
 

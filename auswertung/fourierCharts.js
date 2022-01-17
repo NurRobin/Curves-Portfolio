@@ -118,13 +118,13 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
+let highestTime = 0;
 function addData(csvData){
 
   let dataWave3 = [];
 
   let numData = 500
-  let highestTime = parseFloat(csvData[numData-1]["Time"])
+  highestTime = parseFloat(csvData[numData-1]["Time"])
 
   let i = 0
   while(i < numData){

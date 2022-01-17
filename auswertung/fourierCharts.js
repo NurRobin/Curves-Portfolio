@@ -207,9 +207,10 @@ async function playAnim() {
     waveslider3.value = 0
     while(parseFloat(waveslider3.value) < parseFloat(waveslider3.max) && play == true){
         updateFourier(waveslider3.value)
+        document.getElementById("waveslider3Text").innerHTML = '"Test Frequenz" k ('+ waveslider3.value +")"
         myChart5.data.datasets[0].data = [{x: (parseFloat(waveslider3.value)), y: 0},{x: (parseFloat(waveslider3.value)), y: myChart5.scales.y.max}]
         myChart5.update()
-        waveslider3.value =  parseInt(waveslider3.value) + 1
+        waveslider3.value =  parseInt(waveslider3.value) + 4
         console.log(waveslider3.value+" of "+waveslider3.max+" "+(parseInt(waveslider3.value) + 1))
         await sleep(20)
     }

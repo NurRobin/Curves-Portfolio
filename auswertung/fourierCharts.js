@@ -144,10 +144,10 @@ function addData(csvData){
     myChart4.update()
 
 }
-
+let data = [];
 function updateFourier(k){
 
-  let data = [];
+  data = [];
 
   let i = 0
 

@@ -143,14 +143,6 @@ function addData(csvData){
     myChart4.config.options.scales.x.max = highestTime
     myChart4.update()
 
-    myChart.data.datasets[0].data = [{x: (xSum / ((1/dt)*till)), y: (ySum / ((1/dt)*till))}]
-    myChart.data.datasets[1].data = data;
-    myChart.config.options.scales.x.min = -1*Max
-    myChart.config.options.scales.x.max = Max
-    myChart.config.options.scales.y.max = Max
-    myChart.config.options.scales.y.min = -1*Max
-    myChart.update()
-
 }
 
 function updateFourier(k){

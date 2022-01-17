@@ -196,7 +196,7 @@ waveslider3.addEventListener('input', function () {
   updateFourier(waveslider3.value)
   document.getElementById("waveslider3Text").innerHTML = '"Test Frequenz" k ('+ waveslider3.value +")"
 
-  myChart5.data.datasets[0].data = [{x: (parseFloat(waveslider3.value)/1000), y: 0},{x: (parseFloat(waveslider3.value)/1000), y: myChart5.scales.y.max}]
+  myChart5.data.datasets[0].data = [{x: (parseFloat(waveslider3.value)), y: 0},{x: (parseFloat(waveslider3.value)), y: myChart5.scales.y.max}]
   myChart5.update()
 
 });
@@ -207,7 +207,7 @@ async function playAnim() {
     waveslider3.value = 0
     while(parseFloat(waveslider3.value) < parseFloat(waveslider3.max) && play == true){
         updateValue()
-        myChart5.data.datasets[0].data = [{x: (parseFloat(waveslider3.value)/1000), y: 0},{x: (parseFloat(waveslider3.value)/1000), y: myChart5.scales.y.max}]
+        myChart5.data.datasets[0].data = [{x: (parseFloat(waveslider3.value)), y: 0},{x: (parseFloat(waveslider3.value)), y: myChart5.scales.y.max}]
         myChart5.update()
         waveslider3.value =  parseInt(waveslider3.value) + 1
         console.log(waveslider3.value+" of "+waveslider3.max+" "+(parseInt(waveslider3.value) + 1))
@@ -215,6 +215,60 @@ async function playAnim() {
     }
 }
 
+
+document.getElementById("fourier-button").addEventListener("click",function () {
+  if(play == true){
+      play = false
+      return
+  }
+  play = true
+  playAnim()
+});
+
+function createFinalTransformation(){
+
+  let data2 = []
+  while(j < 1000){
+    let Savedata = [];
+
+    let i = 0
+  
+    let xSum = 0;
+    let ySum = 0;
+    let Max = 0
+  
+    while(i < numData){
+        
+        gy = parseFloat(csvData[i]["Recording"].replace(",","."))
+  
+        wt = -2*Math.PI*k*((highestTime/numData)*i);
+  
+        fourierX = gy*Math.cos(wt);
+        fourierY = gy*Math.sin(wt);
+        Savedata.push({ x: fourierX, y: fourierY});
+  
+        xSum += fourierX
+        ySum += fourierY
+  
+        if (Math.abs(fourierX) > Max){
+            Max = Math.abs(fourierX)
+        }
+  
+        if (Math.abs(fourierY) > Max){
+          Max = Math.abs(fourierY)
+        }
+  
+        i += 1;
+  
+    }
+      i = 0
+      data2.push({x:j, y: (Math.abs((xSum / ((1/(highestTime/numData))*numData)))+Math.abs((ySum / ((1/(highestTime/numData))*numData)))) * 1000})
+      j += 1
+  }
+
+  myChart5.data.datasets[1].data = data2;
+  myChart5.update()
+}
 
 
 var xhr = new XMLHttpRequest();

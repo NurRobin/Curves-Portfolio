@@ -124,7 +124,7 @@ function addData(csvData){
 
   let dataWave3 = [];
 
-  numData = 500
+  numData = 1000
   highestTime = parseFloat(csvData[numData-1]["Time"].replace(",","."))
 
   let i = 0

@@ -130,6 +130,8 @@ function addData(csvData){
   while(i < numData){
       
       dataWave3.push({ x: (highestTime/numData)*i, y: parseFloat(csvData[i]["Recording"])});
+      
+      i += 1;
 
   }
 

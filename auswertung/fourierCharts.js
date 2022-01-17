@@ -159,7 +159,7 @@ function updateFourier(k){
       
       gy = parseFloat(csvData[i]["Recording"].replace(",","."))
 
-      wt = -2*Math.PI*k*((highestTime/numData)*i);
+      wt = -2*Math.PI*k*i;
 
       fourierX = gy*Math.cos(wt);
       fourierY = gy*Math.sin(wt);

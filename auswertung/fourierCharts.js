@@ -150,7 +150,8 @@ function process()
     csvData = $.csv.toObjects(xhr.responseText);
 
     console.log(csvData);
+    addData(csvData);
   }
 }
 
-addData(csvData);
+

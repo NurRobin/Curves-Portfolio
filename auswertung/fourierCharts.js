@@ -206,7 +206,7 @@ play = false
 async function playAnim() {
     waveslider3.value = 0
     while(parseFloat(waveslider3.value) < parseFloat(waveslider3.max) && play == true){
-        updateValue()
+        updateFourier(waveslider3.value)
         myChart5.data.datasets[0].data = [{x: (parseFloat(waveslider3.value)), y: 0},{x: (parseFloat(waveslider3.value)), y: myChart5.scales.y.max}]
         myChart5.update()
         waveslider3.value =  parseInt(waveslider3.value) + 1

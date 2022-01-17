@@ -136,12 +136,11 @@ function addData(csvData){
   }
 
     myChart4.data.datasets[0].data = dataWave3;
-    myChart4.update()
+    
 
     myChart4.config.options.scales.x.min = 0
     myChart4.config.options.scales.x.max = highestTime
-
-
+    myChart4.update()
 
 }
 

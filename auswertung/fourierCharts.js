@@ -263,7 +263,7 @@ function createFinalTransformation(){
   
     }
       i = 0
-      data2.push({x:j, y: (Math.abs((xSum / numData))+Math.abs(ySum / numData)) * 1000})
+      data2.push({x:j, y: Math.sqrt((Math.pow(Math.abs((xSum / numData)),2)+Math.pow(Math.abs(ySum / numData),2))) * 1000})
       j += 1
   }
 

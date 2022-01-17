@@ -180,7 +180,7 @@ function updateFourier(k){
 
   }
 
-    myChart.data.datasets[0].data = [{x: (xSum / ((1/(highestTime/numData))*numData)), y: (ySum / ((1/(highestTime/numData))*numData))}]
+    myChart.data.datasets[0].data = [{x: (xSum / numData), y: (ySum / numData)}]
     myChart.data.datasets[1].data = data;
     myChart.config.options.scales.x.min = -1*Max
     myChart.config.options.scales.x.max = Max

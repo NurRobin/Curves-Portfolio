@@ -118,12 +118,13 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-let highestTime = 0;
+let highestTime = 0.0;
+let numData = 0;
 function addData(csvData){
 
   let dataWave3 = [];
 
-  let numData = 500
+  numData = 500
   highestTime = parseFloat(csvData[numData-1]["Time"].replace(",","."))
 
   let i = 0
@@ -142,7 +143,62 @@ function addData(csvData){
     myChart4.config.options.scales.x.max = highestTime
     myChart4.update()
 
+    myChart.data.datasets[0].data = [{x: (xSum / ((1/dt)*till)), y: (ySum / ((1/dt)*till))}]
+    myChart.data.datasets[1].data = data;
+    myChart.config.options.scales.x.min = -1*Max
+    myChart.config.options.scales.x.max = Max
+    myChart.config.options.scales.y.max = Max
+    myChart.config.options.scales.y.min = -1*Max
+    myChart.update()
+
 }
+
+function updateFourier(k){
+
+  let data = [];
+
+  let i = 0
+
+  let xSum = 0;
+  let ySum = 0;
+  let Max = 0
+
+  while(i < numData){
+      
+      gy = parseFloat(csvData[i]["Recording"].replace(",","."))
+
+      wt = -2*Math.PI*k*((highestTime/numData)*i);
+
+      fourierX = gy*Math.cos(wt);
+      fourierY = gy*Math.sin(wt);
+      data.push({ x: fourierX, y: fourierY});
+
+      xSum += fourierX
+      ySum += fourierY
+
+      if (Math.abs(fourierX) > Max){
+          Max = Math.abs(fourierX)
+      }
+
+      if (Math.abs(fourierY) > Max){
+        Max = Math.abs(fourierY)
+      }
+
+      i += 1;
+
+  }
+
+    myChart.data.datasets[0].data = [{x: (xSum / ((1/dt)*till)), y: (ySum / ((1/dt)*till))}]
+    myChart.data.datasets[1].data = data;
+    myChart.config.options.scales.x.min = -1*Max
+    myChart.config.options.scales.x.max = Max
+    myChart.config.options.scales.y.max = Max
+    myChart.config.options.scales.y.min = -1*Max
+    myChart.update()
+
+}
+
+
 
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = process;
@@ -156,6 +212,7 @@ function process()
 
     console.log(csvData);
     addData(csvData);
+    updateFourier(0.0001);
   }
 }
 

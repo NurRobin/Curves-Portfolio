@@ -226,7 +226,7 @@ document.getElementById("fourier-button").addEventListener("click",function () {
 });
 
 function createFinalTransformation(){
-
+  let j = 0;
   let data2 = []
   while(j < 1000){
     let Savedata = [];
@@ -285,7 +285,7 @@ function process()
     addData(csvData);
     updateFourier(400);
     createFinalTransformation();
-    
+
   }
 }
 

@@ -147,10 +147,9 @@ var csvData = "";
 function process()
 {
   if (xhr.readyState == 4) {
-    csvData = xhr.responseText;
+    csvData = $.csv.toObjects(xhr.responseText);
 
-    // resp now has the text and you can process it.
-    console.log($.csv.toObjects(csvData));
+    console.log(csvData);
   }
 }
 

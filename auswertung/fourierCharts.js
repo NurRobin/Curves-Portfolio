@@ -262,7 +262,7 @@ function createFinalTransformation(){
   
     }
       i = 0
-      data2.push({x:j, y: (Math.abs((xSum / ((1/(highestTime/numData))*numData)))+Math.abs((ySum / ((1/(highestTime/numData))*numData)))) * 1000})
+      data2.push({x:j, y: (Math.abs((xSum / numData))+Math.abs(ySum / numData)) * 1000})
       j += 1
   }
 
@@ -283,7 +283,9 @@ function process()
 
     console.log(csvData);
     addData(csvData);
-    updateFourier(0.0001);
+    updateFourier(400);
+    createFinalTransformation();
+    
   }
 }
 

@@ -143,7 +143,7 @@ var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = process;
 xhr.open("GET", "Messung.csv", true);
 xhr.send();
-var csv = "";
+var csvData = "";
 function process()
 {
   if (xhr.readyState == 4) {
@@ -153,3 +153,5 @@ function process()
     console.log($.csv.toObjects(csv));
   }
 }
+
+addData(csvData);

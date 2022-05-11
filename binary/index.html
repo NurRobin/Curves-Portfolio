@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASTE HEADER</title>
+    <link rel="stylesheet" href="grid.css">
+    <script src="buttons.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="binarylist">
+            <div class="binary-128 bin-rnd-fld-g">128</div>
+            <div class="binary-64 bin-rnd-fld-g">64</div>
+            <div class="binary-32 bin-rnd-fld-g">32</div>
+            <div class="binary-16 bin-rnd-fld-g">16</div>
+            <div class="binary-8 bin-rnd-fld-g">8</div>
+            <div class="binary-4 bin-rnd-fld-g">4</div>
+            <div class="binary-2 bin-rnd-fld-g">2</div>
+            <div class="binary-1 bin-rnd-fld-g">1</div>
+        </div>
+        <div class="rnd-fld binary-1-1-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-2-1-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-4-1-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-8-1-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-16-1-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-32-1-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-64-1-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-128-1-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-1-2-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-2-2-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-4-2-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-8-2-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-16-2-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-32-2-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-64-2-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld binary-128-2-row" onclick="change_bin(this)">0</div>
+        <div class="rnd-fld-g remainder-1">0</div>
+        <div class="rnd-fld-g remainder-2">0</div>
+        <div class="rnd-fld-g remainder-4">0</div>
+        <div class="rnd-fld-g remainder-8">0</div>
+        <div class="rnd-fld-g remainder-16">0</div>
+        <div class="rnd-fld-g remainder-32">0</div>
+        <div class="rnd-fld-g remainder-64">0</div>
+        <div class="rnd-fld-g remainder-128">0</div>
+        <div class="rnd-fld-g sum-1">0</div>
+        <div class="rnd-fld-g sum-2">0</div>
+        <div class="rnd-fld-g sum-4">0</div>
+        <div class="rnd-fld-g sum-8">0</div>
+        <div class="rnd-fld-g sum-16">0</div>
+        <div class="rnd-fld-g sum-32">0</div>
+        <div class="rnd-fld-g sum-64">0</div>
+        <div class="rnd-fld-g sum-128">0</div>
+    </div>
+</body>
+</html>
+
+<!--
+Hall of Shame:
+
+            <label class="rnd-fld input-check" id="1-1-0">
+                <input onchange="change_state(this)" type="checkbox" value="something" name="test"/>
+                0
+            </label>
+            <label class="rnd-fld input-check checked" id="1-1-1">
+                <input onchange="change_state(this)" type="checkbox" value="something" name="test"/>
+                1
+            </label>
+
+-->

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar</title>
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="css/pv.css">
+    <script src="string.js"></script>
+</head>
+<!--run getValue() every 3 seconds-->
+<body onload="getValue();setInterval('getValue()', 3000)">
+    <div class="data">
+        <div>
+            <h1>Verteilung</h1>
+            <h2>Gesamtertrag</h2>
+            <p id="Location_powerProduced"></p>
+            <h2>Einspeisung</h2>
+            <p id="Location_powerOut"></p>
+            <h2>Batterieaufladung</h2>
+            <p id="Location_powerBuffered"></p>
+
+            <h1>Verbrauch</h1>
+            <h2>Gesamt</h2>
+            <p id="Location_powerConsumed"></p>
+            <h2>Aus dem Netz</h2>
+            <p id="Location_powerConsumedFromGrid"></p>
+            <h2>Aus dem Speicher</h2>
+            <p id="Location_powerConsumedFromStorage"></p>
+            <h2>Direktverbrauch</h2>
+            <p id="Location_powerDirectConsumed"></p>
+
+            <h1>Batterie</h1>
+            <h2>Ladung</h2>
+            <p id="BatteryConverter_stateOfCharge"></p>
+
+            <h1>Ladestation</h1>
+            <h2>Status</h2>
+            <p id="EVStation_modeStation"></p>
+        </div>
+    </div>
+</body>
+</html>

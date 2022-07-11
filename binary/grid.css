@@ -1,5 +1,6 @@
 body {
     background-color: #202124;
+    font-family: 'Staatliches', cursive;
 }
 .container {
     display: grid;
@@ -14,7 +15,6 @@ body {
     "binary-128-2-row binary-64-2-row binary-32-2-row binary-16-2-row binary-8-2-row binary-4-2-row binary-2-2-row binary-1-2-row"
     "remainder-128 remainder-64 remainder-32 remainder-16 remainder-8 remainder-4 remainder-2 remainder-1"
     "sum-128 sum-64 sum-32 sum-16 sum-8 sum-4 sum-2 sum-1";
-    font-family: arial,sans-serif;
 }
 .binarylist {
     display: grid;
@@ -121,4 +121,25 @@ body {
     cursor: pointer;
     line-height: 34px;
     font-size: 14px;
+}
+.clear-space {
+    height: 100px;
+}
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 34px;
+}
+.result{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
 }

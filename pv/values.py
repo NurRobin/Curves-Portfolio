@@ -19,6 +19,7 @@ class getValues():
         item = ["Location_powerProduced","Location_powerOut","Location_powerBuffered","Location_powerConsumed","Location_powerConsumedFromGrid","Location_powerConsumedFromStorage","Location_powerDirectConsumed","EVStation_modeStation", "BatteryConverter_stateOfCharge"]
         self.item = item
         self.getValue()
+        self.saveBattery()
     def getValue(self):
         #print time stamp and placeholder for values
         print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
@@ -38,8 +39,25 @@ class getValues():
             with open('values/' + item + '.txt', 'w') as f:
                 f.write(response.text)
         print("-----------------------------------------------------")
-        #wait 3 seconds and repeat
+        #wait 3 seconds and exit
         time.sleep(3)
-        self.getValue()
 
-getValues()
+    def saveBattery(self):
+        #create csv file titled battery.csv
+        with open('values/battery.csv', 'w') as f:
+            #write header
+            f.write("timestamp,stateOfCharge\n")
+            #write timestamp and state of charge
+            f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + "," + open('values/BatteryConverter_stateOfCharge.txt', "r").read())
+            #close file
+            f.close()
+
+        #add new line to csv file if state of charge changed
+        if open('values/BatteryConverter_stateOfCharge.txt', "r").read() != open('values/battery.csv', "r").readlines()[-1].split(",")[1]:
+            with open('values/battery.csv', "a") as f:
+                f.write(open('values/BatteryConverter_stateOfCharge.txt', "r").read())
+                f.close()
+
+#run getValues class every time nothing else is running
+if __name__ == "__main__":
+    getValues()

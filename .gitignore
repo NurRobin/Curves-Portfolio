@@ -3,12 +3,3 @@
 .htpasswd
 \admin
 \pihole
-pv/values/BatteryConverter_stateOfCharge.txt
-pv/values/EVStation_modeStation.txt
-pv/values/Location_powerConsumed.txt
-pv/values/Location_powerBuffered.txt
-pv/values/Location_powerConsumedFromGrid.txt
-pv/values/Location_powerConsumedFromStorage.txt
-pv/values/Location_powerDirectConsumed.txt
-pv/values/Location_powerOut.txt
-pv/values/Location_powerProduced.txt

@@ -1,5 +1,7 @@
 import requests
 import time
+import os
+import csv
 
 class bcolors:
     HEADER = '\033[95m'
@@ -19,7 +21,6 @@ class getValues():
         item = ["Location_powerProduced","Location_powerOut","Location_powerBuffered","Location_powerConsumed","Location_powerConsumedFromGrid","Location_powerConsumedFromStorage","Location_powerDirectConsumed","EVStation_modeStation", "BatteryConverter_stateOfCharge"]
         self.item = item
         self.getValue()
-        self.saveBattery()
     def getValue(self):
         #print time stamp and placeholder for values
         print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
@@ -33,31 +34,18 @@ class getValues():
             #print value in green if it changed since last run, red if it didn't
             if response.text == open('values/' + item + ".txt", "r").read():
                 print(f"{bcolors.FAIL} + {item}: {response.text}{bcolors.ENDC}")
+                print(f"{bcolors.FAIL} + {item}: CSV not updated{bcolors.ENDC}")
             else:
                 print(f"{bcolors.OKGREEN} - {item}: {response.text}{bcolors.ENDC}")
-            #save string in file
-            with open('values/' + item + '.txt', 'w') as f:
-                f.write(response.text)
+                with open('values/' + item + '.txt', 'w') as f:
+                    f.write(response.text)
+                #save data in each item to a new line in csv file |item.txt|Time|Date| if item changed since last run
+                with open('values/' + item + '.csv', 'a') as f:
+                    writer = csv.writer(f)
+                    writer.writerow([response.text, time.strftime("%H:%M:%S", time.localtime()), time.strftime("%d-%m-%Y", time.localtime())])
+                print(f"{bcolors.OKGREEN} + {item}: CSV updated{bcolors.ENDC}")
         print("-----------------------------------------------------")
-        #wait 3 seconds and exit
         time.sleep(3)
 
-    def saveBattery(self):
-        #create csv file titled battery.csv
-        with open('values/battery.csv', 'w') as f:
-            #write header
-            f.write("timestamp,stateOfCharge\n")
-            #write timestamp and state of charge
-            f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + "," + open('values/BatteryConverter_stateOfCharge.txt', "r").read())
-            #close file
-            f.close()
-
-        #add new line to csv file if state of charge changed
-        if open('values/BatteryConverter_stateOfCharge.txt', "r").read() != open('values/battery.csv', "r").readlines()[-1].split(",")[1]:
-            with open('values/battery.csv', "a") as f:
-                f.write(open('values/BatteryConverter_stateOfCharge.txt', "r").read())
-                f.close()
-
-#run getValues class every time nothing else is running
-if __name__ == "__main__":
+while True == True:
     getValues()

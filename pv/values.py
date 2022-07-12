@@ -46,6 +46,7 @@ class getValues():
                 print(f"{bcolors.OKGREEN} + {item}: CSV updated{bcolors.ENDC}")
         print("-----------------------------------------------------")
         time.sleep(3)
+        #cant use recursion here because it will run forever and stop after 1000 recursions
 
 while True == True:
     getValues()

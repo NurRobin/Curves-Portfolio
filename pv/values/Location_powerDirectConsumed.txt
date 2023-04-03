@@ -1,1 +1,5 @@
-0 W
+HTTP ERROR 404 Not Found
+URI: /rest/items/Location_powerDirectConsumed/state
+STATUS: 404
+MESSAGE: Not Found
+SERVLET: null

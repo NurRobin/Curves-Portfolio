@@ -613,3 +613,7 @@ section {
     align-self: center;
     grid-area: Twitter-Log;
 }
+
+.hidden{
+    display: none;
+}

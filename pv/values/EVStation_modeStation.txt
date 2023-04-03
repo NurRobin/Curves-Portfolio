@@ -1,1 +1,5 @@
-STANDBY
+HTTP ERROR 404 Not Found
+URI: /rest/items/EVStation_modeStation/state
+STATUS: 404
+MESSAGE: Not Found
+SERVLET: null

@@ -1,0 +1,15 @@
+body>div.data>div>div>h1.datatitle,h2,p
+{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+body>div.data>div>div
+{
+    border: 1px solid black;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

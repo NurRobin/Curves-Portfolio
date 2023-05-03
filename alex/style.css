@@ -1,0 +1,77 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Secular One', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.intro {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: #5E51B9;
+    justify-content: center;
+    align-items: center;
+}
+.intro p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container h2{
+    font-size: 50px;
+    text-align: center;
+}
+.container h3{
+    font-size: 30px;
+    text-align: center;
+}
+.container p{
+    font-size: 20px;
+    text-align: center;
+}
+#color{
+    background-color: #51B95E;
+}
+#animal{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-origin: content-box;
+    background-image: url(../img/Chinchilla2.jpg);
+}
+#food{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-origin: content-box;
+    background-image: url(../img/mousse.jpg);
+}
+#flower{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-origin: content-box;
+    background-image: url(../img/daisy.jpg);
+}

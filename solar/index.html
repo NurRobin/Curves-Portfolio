@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-3.6.0.js"></script>
+    <title>SolarWatt</title>
+</head>
+    <body>
+        <div>
+            <div id="thumb_power_value"></div>
+            <!--Display data-->
+            <script>
+                $(document).ready(function(){
+                    setInterval(function(){
+                        $.get("http://192.168.178.47/#/startpage",
+                        //get data
+                        function(data){
+                            $("#thumb_power_value").html(data);
+                        });
+                        $("div #thumb_power_value").clone().add(data).appendTo(document.body);
+                    }, 1000);
+                });
+            </script>
+        </div>
+    </body>
+</html>

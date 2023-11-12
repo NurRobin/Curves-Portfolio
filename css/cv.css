@@ -2,6 +2,67 @@
     box-sizing: border-box;
 }
 
+body {
+    transition: opacity .5s;
+    position: absolute;
+    width: 100vw;
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    color: var(--text);
+    background: var(--body);
+    overflow-x: hidden;
+}
+
+.header {
+    font-family: 'Secular One', sans-serif;
+    position: relative;
+    display: grid;
+    font-size: 45;
+    background:var(--robin);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 25px 20vw;
+}
+
+.header-wo-grid {
+    font-family: 'Secular One', sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 45;
+    background:var(--robin);
+}
+
+.header-title {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.header-nav {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.grid-left {
+    justify-self: left;
+    align-self: center;
+}
+
+.grid-right {
+    justify-self: right;
+    align-self: center;
+}
+
+.hover-bigger {
+    transition: font-size 0.5s;
+    font-size: x-large;
+}
+
+.hover-bigger:hover {
+    transition: font-size 0.5s;
+    font-size: xx-large;
+}
+
+
 .cv-header {
     position: relative;
 }
@@ -17,14 +78,57 @@
     background-image: url('../svg/robintobody.svg');
 }
 
-.bodytorobin {
-    background-image: url('../svg/bodytorobin.svg');
-}
-
 .cv-intro {
     color: var(--text);
     padding: 10px;
     text-align: center;
+}
+
+.settings {
+    width: 100%;
+    background: var(--robin);
+    position: relative;
+    display: flexbox;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.settings-title {
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    top: 100%;
+    right: 0;
+}
+
+.settings-content-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+}
+
+.divider {
+    width: 100%;
+    height: 30px;
+}
+
+.connector {
+    /*Width = screensize divided by 2 and plus 3px*/ 
+    width: calc(50vw + 3px);
+    height: 6px;
+    background: var(--robin);
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -125,6 +229,10 @@
     /* Place the timelime to the left */
     .timeline::after {
         left: 31px;
+    }
+
+    .connector {
+        width: 34px;
     }
 
     /* Full-width containers */

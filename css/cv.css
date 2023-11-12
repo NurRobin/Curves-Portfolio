@@ -79,6 +79,7 @@ body {
 }
 
 .cv-intro {
+    background: var(--robin);
     color: var(--text);
     padding: 10px;
     text-align: center;
@@ -86,7 +87,6 @@ body {
 
 .settings {
     width: 100%;
-    background: var(--robin);
     position: relative;
     display: flexbox;
     top: 0;

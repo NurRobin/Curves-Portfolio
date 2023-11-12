@@ -131,6 +131,15 @@ body {
     background: var(--robin);
 }
 
+.connector-right {
+    display: flex;
+    /*Width = screensize divided by 2 and plus 3px*/ 
+    width: calc(50vw + 3px);
+    height: 6px;
+    background: var(--robin);
+    float: right;
+}
+
 /* The actual timeline (the vertical ruler) */
 .timeline {
     position: relative;
@@ -184,7 +193,7 @@ body {
 
 /* Add arrows to the left container (pointing right) */
 .left::before {
-    content: " ";
+    content: "";
     height: 0;
     position: absolute;
     top: 22px;
@@ -233,6 +242,10 @@ body {
 
     .connector {
         width: 34px;
+    }
+
+    .connector-right {
+        width: calc(100vw - 28px);
     }
 
     /* Full-width containers */

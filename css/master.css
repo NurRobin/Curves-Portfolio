@@ -1,4 +1,6 @@
 body {
+    opacity: 0;
+    transition: opacity .5s;
     position: absolute;
     width: 100vw;
     margin: 0;

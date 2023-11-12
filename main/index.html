@@ -14,40 +14,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+    <script src="https://nurrobin.de/js/transition.js"></script>
 </head>
 
 <body>
     <div class="header">
-        <a href="http://nurrobin.de/" class="grid-left header-title anti-purple anti-underline">NurRobin</a>
+        <span onclick="transitionToPage('http://nurrobin.de/')" class="grid-left header-title">NurRobin</span>
         <nav class="grid-right header-nav">
-            <a class="anti-purple" href="../main"><i class="bi bi-house hover-bigger"></i></a>
-            <a class="anti-purple" href="https://youtube.com/channel/UCZ29pwX9kgSRi_CzZGnP3cg" target=”_blank”><i
-                    class="bi bi-youtube hover-bigger"></i></a>
-            <a class="anti-purple" href="https://twitch.tv/nurrobin_" target=”_blank”><i
-                    class="bi bi-twitch hover-bigger"></i></a>
-            <a class="anti-purple" href="../about"><i class="bi bi-info-circle hover-bigger"></i></a>
-        </nav>
+            <span onclick="transitionToPage('http://nurrobin.de/main')"><i class="bi bi-house hover-bigger"></i></span>
+            <span class="anti-purple" onclick="transitionToPage('https://youtube.com/channel/UCZ29pwX9kgSRi_CzZGnP3cg')"><i class="bi bi-youtube hover-bigger"></i></span>
+            <span class="anti-purple" onclick="transitionToPage('https://twitch.tv/nurrobin_')"><i class="bi bi-twitch hover-bigger"></i></span>
+            <span class="anti-purple" onclick="transitionToPage('https://nurrobin.de/about')"><i class="bi bi-info-circle hover-bigger"></i></span>
         </nav>
     </div>
     <div class="header-svg background-header-svg"></div>
     <section class="blue">
-        <h1>YouTube</h1>
-        <p>Mein erstes YouTube-Video ist lange her, um ehrlich zu sein ist es traurig, dass mein erstes Video mein bisher
-            erfolgreichstes war. In dem Video habe ich mit meinem guten Freund Jesper „10 Arten von Hoverboard-Fahrern“
-            vorgestellt. Ja, auch ich habe meine Anfänge in „10-Arten"-Videos. Dieses Video hat damals ca. 140 Aufrufe gehabt
-            und mir ganze 34ct eingebracht, die ich dank Googles Auszahlminimum von 70€ nie bekommen habe.
-        <br>
-            Mittlerweile, so würde ich behaupten, mache ich qualitativ bessere Videos, allerdings komplett ohne Zeitplan, weswegen mein letztes
-            Video schon wieder Monate her ist.
+        <h1>Über Mich</h1>
+        <p>Hallo,
+            <br>
+            ich bin Robin, momentan 19 Jahre alt und ich studiere Informatik.
+            <br>
+            Ich habe mit meinem PC einen guten Zeitvertreib und ein nettes Hobby gefunden. Aktuell bin ich durch Studium etc. eher wenig am spielen geschweigedenn Aufnehmen, aber mir macht YouTube, bzw. Social-Media viel Spaß, da ich dort ein wenig Kreativität auslassen kann.
+            Aber wie so oft habe ich immer viele Ideen, aber keine Idee wie ich sie umsetzen kann. Mit Musik hab ich es auch mal versucht, die kann man u.a. auf <span onclick="transitionToPage('https://open.spotify.com/artist/1O7IqxQ65XLSBFHxbfZxdV')"><u>Spotify</u></span> finden, aber da ist ist die Regelmäßigkeit von neuen Dingen noch schlimmer als auf YouTube oder Twitch.
         </p>
         <div class="curve-blue-body"></div>
     </section>
     <section>
-        <h1>Twitch</h1>
-        <p>Twitch ist so eine Sache, auf der einen Seite finde ich es besser, da es wirklich nur für Livestreaming gedacht ist, aber gleichzeitig fehlt einem die Audienz von YouTube.
-            Da ich aber sowieso eher selten Streame, wobei das auch auf Video zutrifft, macht das ganze eigentlich keinen Unterschied.
-            <br>
-            Generel kann man sagen, folgen und Benachrichtigungen an um zu sehen wann ich Streame, da auch das absolut nicht regelmäßig ist.
+        <h1>Job & Studium</h1>
+        <p>
+            Seit Oktober 2023 tauche ich in die Welt des dualen Studiums der "Mobile Informatik" an der DHBW Ravensburg ein, während ich gleichzeitig als Software Engineer bei der innoSysTec GmbH arbeite. Die Kombination aus Studium und beruflicher Praxis eröffnet mir faszinierende Einblicke in die komplexe und dynamische Welt der Softwareentwicklung. Durch meine Tätigkeit bei innoSysTec kann ich nicht nur mein theoretisches Wissen vertiefen, sondern auch tagtäglich an anspruchsvollen Projekten arbeiten, die einen praxisnahen Blick auf die Softwareentwicklung ermöglichen.
         </p>
     </section>
     <section class="dark">
@@ -65,13 +60,14 @@
                     class="shape-fill"></path>
             </svg>
         </div>
-        <h1>Über Mich</h1>
-        <p>Hallo,
-            <br>
-            ich bin Robin, momentan 19 Jahre alt und mir ist langweilig, da dies ein Dauerzustand ist habe ich mit meinem PC einen guten Zeitvertreib und ein nettes Hobby gefunden.
-            <br>
-            Aktuell bin ich durch Schule etc. eher wenig am spielen geschweigedenn Aufnehmen, aber mir macht YouTube, bzw. Social-Media viel Spaß, da ich wenigstens dort ein wenig Kreativität auslassen kann.
-            Aber wie so oft habe ich immer viele Ideen, aber keine Idee wie ich sie umsetzen kann. Mit Musik hab ich es auch mal versucht, die kann man u.a. auf <a href="https://open.spotify.com/artist/1O7IqxQ65XLSBFHxbfZxdV" class="anti-purple" target="_blank">Spotify</a> finden, aber da ist ist die Regelmäßigkeit von neuen Dingen noch schlimmer als auf YouTube oder Twitch.
+        <h1>YouTube</h1>
+        <p>Mein erstes YouTube-Video ist lange her, um ehrlich zu sein ist es traurig, dass mein erstes Video mein bisher
+            erfolgreichstes war. In dem Video habe ich mit meinem guten Freund Jesper „10 Arten von Hoverboard-Fahrern“
+            vorgestellt. Ja, auch ich habe meine Anfänge in „10-Arten"-Videos. Dieses Video hat damals ca. 140 Aufrufe gehabt
+            und mir ganze 34ct eingebracht, die ich dank Googles Auszahlminimum von 70€ nie bekommen habe.
+        <br>
+            Mittlerweile, so würde ich behaupten, mache ich qualitativ bessere Videos, allerdings komplett ohne Zeitplan, weswegen mein letztes
+            Video schon wieder Monate her ist.
         </p>
         <div class="dark-waves-bottom">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -89,14 +85,17 @@
         </div>
     </section>
     <section>
-        <h1>Meine Freundin</h1>
-        <p>Bin mit dem Zwerg seit dem 02.04.2023 zusammen, mag noch nicht riesig lang sein, aber alle Ewigkeit hat ihren Anfang. <a href="../alex/">:)</a></p>
+        <h1>Twitch</h1>
+        <p>Twitch ist so eine Sache, auf der einen Seite finde ich es besser, da es wirklich nur für Livestreaming gedacht ist, aber gleichzeitig fehlt einem die Audienz von YouTube.
+            Da ich aber sowieso eher selten Streame, wobei das auch auf Video zutrifft, macht das ganze eigentlich keinen Unterschied.
+            <br>
+            Generel kann man sagen, folgen und Benachrichtigungen an um zu sehen wann ich Streame, da auch das absolut nicht regelmäßig ist.
+        </p>
         <div class="curve-body-pink"></div>
     </section>
     <section class="pink">
-        <h1>Nice Curves</h1>
-        <p>Nulla quas, cumque fuga ad in quis? Dicta maiores, ipsam cupiditate id facere blanditiis eos veniam, nobis
-            amet quae iste, qui magni placeat. Aliquam pariatur, doloremque sed sint fugit veniam?</p>
+        <h1>Meine Freundin</h1>
+        <p>Bin mit dem Zwerg seit dem 02.04.2023 zusammen, mag noch nicht riesig lang sein, aber alle Ewigkeit hat ihren Anfang. <a href="../alex/">:)</a></p>
         <svg id="visual" viewBox="0 0 960 300" width="960" height="300" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <g transform="translate(475.7215778274817 150.31134611993255)">

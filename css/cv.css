@@ -85,6 +85,19 @@ body {
     text-align: center;
 }
 
+.cv-hidden {
+    transition: opacity 0.5s, height 0.5s;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.cv-visible {
+    transition: opacity 0.5s, height 0.5s;
+    opacity: 1;
+    height: auto;
+}
+
 .settings {
     width: 100%;
     position: relative;

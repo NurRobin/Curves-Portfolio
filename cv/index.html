@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de-DE">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,17 @@
     <title>Lebenslauf</title>
     <link rel="icon" type="image/png" href="../ico/android-chrome-512x512.png">
     <link rel="stylesheet" href="../css/master.css">
-    <link rel="stylesheet" href="../css/colors.css"> 
+    <link rel="stylesheet" href="../css/colors.css">
     <link rel="stylesheet" href="../css/cv.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap" rel="stylesheet">
-    <script src="https://nurrobin.de/js/transition.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Secular+One&display=swap"
+        rel="stylesheet">
+    <script src="../js/transition.js"></script>
 </head>
+
 <body>
     <div class="header">
         <a href="http://nurrobin.de/" class="grid-left header-title anti-purple anti-underline">NurRobin</a>
@@ -28,12 +32,14 @@
         </nav>
     </div>
     <div class="cv-intro">
-            <h1>Lebenslauf</h1>
-            <p>
-                Willkommen zu meinem Lebenslauf. Ich bin Robin Alexander Gramb, Software Engineering Student bei innoSysTec GmbH.
-                </br>
-                Hier zu finden ist mein kompletter Werdegang, von der Schule bis zum Beruf. Oben zu finden sind Checkboxen, um nur bestimmte Aspekte des Lebenslaufs zu sehen.
-            </p>
+        <h1>Lebenslauf</h1>
+        <p>
+            Willkommen zu meinem Lebenslauf. Ich bin Robin Alexander Gramb, Software Engineering Student bei innoSysTec
+            GmbH.
+            </br>
+            Hier zu finden ist mein kompletter Werdegang, von der Schule bis zum Beruf. Unten befinden sich Checkboxen,
+            um nur bestimmte Aspekte des Lebenslaufes zu sehen.
+        </p>
     </div>
     <div class="robintobody svg"></div>
     <div class="settings">
@@ -41,98 +47,225 @@
         <div class="settings-title">Aspekte</div>
         <div class="settings-content">
             <div class="settings-content-item">
-                <input type="checkbox" id="settings-content-item-1" name="settings-content-item-1" value="1" checked>
-                <label for="settings-content-item-1">Schule</label>
+                <input type="checkbox" id="checkbox-schule" name="checkbox-schule" value="1" checked>
+                <label for="checkbox-schule">Schule</label>
             </div>
             <div class="settings-content-item">
-                <input type="checkbox" id="settings-content-item-2" name="settings-content-item-2" value="2" unchecked>
-                <label for="settings-content-item-2">Praktika/Berufserfahrung</label>
+                <input type="checkbox" id="checkbox-praktika" name="checkbox-praktika" value="2" unchecked>
+                <label for="checkbox-praktika">Praktika/Berufserfahrung</label>
             </div>
             <div class="settings-content-item">
-                <input type="checkbox" id="settings-content-item-2" name="settings-content-item-2" value="2" checked>
-                <label for="settings-content-item-2">Ausbildung</label>
+                <input type="checkbox" id="checkbox-studium" name="checkbox-studium" value="2" checked>
+                <label for="checkbox-studium">Studium</label>
             </div>
             <div class="settings-content-item">
-                <input type="checkbox" id="settings-content-item-3" name="settings-content-item-3" value="3" checked>
-                <label for="settings-content-item-3">Beruf</label>
+                <input type="checkbox" id="checkbox-beruf" name="checkbox-beruf" value="3" checked>
+                <label for="checkbox-beruf">Beruf</label>
             </div>
             <div class="settings-content-item">
-                <input type="checkbox" id="settings-content-item-4" name="settings-content-item-4" value="4" unchecked>
-                <label for="settings-content-item-4">Hobbys</label>
+                <input type="checkbox" id="checkbox-hobbys" name="checkbox-hobbys" value="4" unchecked>
+                <label for="checkbox-hobbys">Hobbys</label>
             </div>
             <div class="settings-content-item">
-                <input type="checkbox" id="settings-content-item-5" name="settings-content-item-5" value="5" unchecked>
-                <label for="settings-content-item-5">Fähigkeiten</label>
+                <input type="checkbox" id="checkbox-skills" name="checkbox-skills" value="5" unchecked>
+                <label for="checkbox-skills">Fähigkeiten</label>
             </div>
             <div class="settings-content-item">
-                <input type="checkbox" id="settings-content-item-6" name="settings-content-item-6" value="6" unchecked>
-                <label for="settings-content-item-6">Sprachen</label>
+                <input type="checkbox" id="checkbox-sprache" name="checkbox-sprache" value="6" unchecked>
+                <label for="checkbox-sprache">Sprachen</label>
             </div>
             <div class="settings-content-item">
-                <input type="checkbox" id="settings-content-item-7" name="settings-content-item-7" value="7" unchecked>
-                <label for="settings-content-item-7">Sonstiges</label>
+                <input type="checkbox" id="checkbox-sonstiges" name="checkbox-sonstiges" value="7" unchecked>
+                <label for="checkbox-sonstiges">Sonstiges</label>
             </div>
         </div>
     </div>
     <div class="divider"></div>
     <div class="connector"></div>
     <div class="timeline">
-        <div class="container left">
+        <div class="container right cv-beruf">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Software Engineering Student</h2>
+                <h3>innoSysTec GmbH</h3>
+                <h3>10/2023 - aktuell</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
             </div>
         </div>
-        <div class="container right">
+        <div class="container left cv-studium">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Studium Mobile Informatik</h2>
+                <h3>DHBW-Ravensburg</h3>
+                <h3>10/2023 - aktuell</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
             </div>
         </div>
-        <div class="container left">
+        <div class="container right cv-praktika">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Nebenjob 1a Autoservice Walk</h2>
+                <h3>Aach-Linz, Baden-Württemberg</h3>
+                <h3>07/2023 - 09/2023</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
             </div>
         </div>
-        <div class="container right">
+        <div class="container left cv-schule">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Abitur</h2>
+                <h3>Gymnasium Überlingen</h3>
+                <h3>07/2023</h3>
+                <ul>
+                    <li>Abschlussnote: 2,8</li>
+                    <li>Leistungskurse: Physik, Deutsch, Englisch</li>
+                    <li>Mündliche Prüfungsfächer: Mathe, Geo/GK</li>
+                    <li>Wahlfach: Informatik</li>
+                </ul>
             </div>
         </div>
-        <div class="container left">
+        <div class="container right cv-praktika">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Aushilfsjob Heizung-Sanitär Lernhart</h2>
+                <h3>Wald, Baden-Württemberg</h3>
+                <h3>06/2022</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
             </div>
         </div>
-        <div class="container right">
+        <div class="container left cv-praktika">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Aushilfsjob Elektrotechnik Moser Hohenfels</h2>
+                <h3>Hohenfels, Baden-Württemberg</h3>
+                <h3>08/2022</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
             </div>
         </div>
-        <div class="container left">
+        <div class="container right cv-praktika">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Aushilfsjob in der Produktion Geberit Vertriebs GmbH</h2>
+                <h3>Pfullendorf, Baden-Württemberg</h3>
+                <h3>07/2022</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
             </div>
         </div>
-        <div class="container right">
+        <div class="container left cv-praktika">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Aushilfsjob Elektrotechnik Moser Hohenfels</h2>
+                <h3>Hohenfels, Baden-Württemberg</h3>
+                <h3>05/2022</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
             </div>
         </div>
-        <div class="container left">
+        <div class="container right cv-praktika">
             <div class="content">
-                <h2>YYYY</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, animi veniam excepturi quibusdam ad debitis nesciunt tempora quasi natus obcaecati non fuga reprehenderit nostrum enim labore recusandae velit voluptates sed.</p>
+                <h2>Aushilfsjob Elektrotechnik Moser Hohenfels</h2>
+                <h3>Hohenfels, Baden-Württemberg</h3>
+                <h3>09/2021</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container left cv-schule">
+            <div class="content">
+                <h2>Gymnasium Überlingen</h2>
+                <h3>Überlingen, Baden-Württemberg</h3>
+                <h3>09/2020 - 07/2023</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container right cv-praktika">
+            <div class="content">
+                <h2>Praktika KLK Klima-Lüftung-Kälte Kundendienst und -montage GmbH Stuhr</h2>
+                <h3>Stuhr, Niedersachsen</h3>
+                <h3>08/2019</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container left cv-schule">
+            <div class="content">
+                <h2>USA Austausch</h2>
+                <h3>New York City & Mankato, Minnesota</h3>
+                <h3>03/2019 - 04/2019</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container right cv-schule">
+            <div class="content">
+                <h2>KGS-Stuhr-Brinkum Gymnasialzweig</h2>
+                <h3>Stuhr-Brinkum, Niedersachsen</h3>
+                <h3>08/2017 - 07/2020</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container left cv-sonstiges">
+            <div class="content">
+                <h2>Grundschule Heiligenrode</h2>
+                <h3>Stuhr-Heiligenrode, Niedersachsen</h3>
+                <h3>08/2013 - 06/2017</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container right  cv-sonstiges">
+            <div class="content">
+                <h2>Sterntalerschule Schöneck-Büdesheim</h2>
+                <h3>Schöneck-Büdesheim, Hessen</h3>
+                <h3>08/2010 - 07/2013</h3>
+                <ul>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                    <li>TEXT</li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="connector-right"></div>
     <div class="divider"></div>
+    <script src="../js/cv-checkboxes.js"></script>
 </body>
+
 </html>
